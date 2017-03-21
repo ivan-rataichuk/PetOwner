@@ -1,0 +1,88 @@
+﻿.po-column{
+    width: 600px;
+    margin: 0 auto;
+}
+
+.po-column h2 {
+    text-align: center;
+}
+
+.po-table {
+    width: 600px;
+    margin: 10px auto;
+    border: 2px solid black;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.po-table tr{
+    height: 29px;
+} 
+
+.po-table tr:nth-child(even){
+    background-color: #e2e2e2;
+} 
+
+.po-table td, .po-table th {
+    padding: 4px 10px;
+} 
+
+.po-table .t-header {
+    background-color: lightblue;
+}
+
+.po-table .col-1 {
+    width: 50%;
+    border-right: 2px solid black;
+}
+
+.po-table .col-last {
+    text-align: right;
+}
+
+.po-pagination span {
+    display: inline-block;
+    text-align: center;
+    font-size: 1.2em;
+    padding-right: 5px;
+}
+
+.po-pagination span:hover {
+    cursor: pointer;
+}
+
+.po-pagination span::after {
+    content: ","
+}
+
+.po-pagination span:last-child::after {
+    content: ""
+}
+
+.po-pagination {
+   text-align: center;
+}
+
+.po-pagination .p-select {
+    display: inline;
+}
+
+.active {
+    color: darkorange;
+}
+
+.po-form {
+    text-align: center;
+}
+
+.po-form form {
+    display: inline;
+}
+
+.po-invalid {
+    display: block;
+    color: red;
+    padding: 5px;
+}
+
+

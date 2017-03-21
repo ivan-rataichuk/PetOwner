@@ -1,0 +1,34 @@
+﻿<div class="po-column">
+    <h2>{{owner.Name}}'s pets</h2>
+    <p><a href="/">Back to all Users</a></p>
+
+    <div class="po-form">
+        <form name="petForm">
+            <input name="petName" type="text" ng-model="NewPet" placeholder="Enter Pet's Name" required />
+            <button ng-disabled="petForm.petName.$invalid" ng-click="addPet()">Add Pet</button>
+        </form>
+    </div>
+
+    <hr/>
+
+    <p>Total count: {{petsTotal}}</p>
+    <table class="po-table">
+        <tr class="t-header">
+            <th colspan="2">Name</th>
+        </tr>
+        <tr ng-repeat="pet in items">
+            <td>{{pet.Name}}</td>
+            <td class="col-last"><button ng-click="deletePet(pet.Id)">Delete</button></td>
+        </tr>
+        <tr ng-repeat="n in emptyItems track by $index">
+            <td colspan="2">&nbsp;</td>
+        </tr>
+    </table>
+    <div class="po-pagination">
+        <div class="p-select">
+            <span ng-repeat="pageNum in pageNumbers" ng-class="{active: currentPage == pageNum}" ng-click="selectPage(pageNum)">{{pageNum}}</span>
+        </div>
+    </div>
+</div>
+    
+

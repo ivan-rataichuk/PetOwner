@@ -1,0 +1,38 @@
+﻿
+<div class="po-column">
+    <h2>All Users</h2>
+
+    <div class="po-form">
+        <form name="ownerForm">
+            <input name="ownerName" type="text" ng-model="NewOwnerName" placeholder="Enter Pet Owner's Name" required />
+            <button ng-disabled="ownerForm.ownerName.$invalid" ng-click="addNewOwner()">Add Owner</button>
+        </form>
+    </div>
+
+    <hr/>
+
+    <h3 ng-if="dataLoading">Data Loading...</h3>
+
+    <p>Total count: {{ownersTotal}}</p>
+
+    <table class="po-table">
+        <tr class="t-header">
+            <th class="col-1">Name</th>
+            <th colspan="2">Pets Count</th>
+        </tr>
+        <tr ng-repeat="item in items">
+            <td class="col-1"><a href="owner/{{item.Id}}">{{ item.Name }}</a></td>
+            <td>{{ item.PetsCount }}</td>
+            <td class="col-last"><button ng-click="deleteOwner(item.Id)">Delete</button></td>
+        </tr>
+        <tr ng-repeat="n in emptyItems track by $index">
+            <td class="col-1">&nbsp;</td>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+    </table>
+    <div class="po-pagination">
+        <div class="p-select">
+            <span ng-repeat="pageNum in pageNumbers" ng-class="{active: currentPage == pageNum}" ng-click="selectPage(pageNum)">{{pageNum}}</span>
+        </div>
+    </div>
+</div>
